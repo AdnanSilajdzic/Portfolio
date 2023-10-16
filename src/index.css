@@ -1,0 +1,50 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-family: 'Alma Mono';
+	src: url('src/assets/fonts/AlmaMono-Regular.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Alma Mono Bold';
+	src: url('src/assets/fonts/AlmaMono-Bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Alma Mono Light';
+	src: url('src/assets/fonts/AlmaMono-Light.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Alma Mono Thin';
+	src: url('src/assets/fonts/AlmaMono-Thin.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Alma Mono Heavy';
+	src: url('src/assets/fonts/AlmaMono-Heavy.ttf') format('truetype');
+}
+
+body {
+	background-color: black;
+	overflow: hidden;
+}
+
+@keyframes rotate {
+	from {
+		rotate: 0deg;
+	}
+	50% {
+		scale: 1 1.5;
+	}
+	to {
+		rotate: 360deg;
+	}
+}
+
+#blob {
+	animation: rotate 5s linear infinite;
+	translate: -50% -50%;
+}
