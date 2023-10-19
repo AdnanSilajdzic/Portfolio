@@ -28,8 +28,8 @@
 }
 
 body {
-	background-color: black;
-	overflow: hidden;
+	background-color: #000f1b;
+	overflow-x: hidden;
 }
 
 @keyframes rotate {
