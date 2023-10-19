@@ -20,7 +20,7 @@ const Splash = () => {
 			} else {
 				clearInterval(intervalId); // Stop the interval when all elements are processed
 			}
-		}, 70);
+		}, 60);
 	};
 	const typingBottom = () => {
 		let j = -1;
@@ -31,18 +31,21 @@ const Splash = () => {
 			} else {
 				clearInterval(intervalId); // Stop the interval when all elements are processed
 			}
-		}, 70);
+		}, 60);
 	};
 
 	useEffect(() => {
 		setSubText(BinaryTextEffect(trueSubText, 0));
-		typingTop();
-		setTimeout(typingBottom, 1400);
+		setText(BinaryTextEffect(trueText, 0));
+		setTimeout(() => {
+			typingTop();
+			setTimeout(typingBottom, 1400);
+		}, 800);
 	}, []);
 
 	return (
-		<div className="flex h-screen flex-col items-center justify-center text-center font-almamono text-7xl text-white">
-			<div className="z-30 flex flex-col items-center justify-center gap-6">
+		<div className=" flex h-screen flex-col items-center justify-center text-center font-almamono text-7xl text-white">
+			<div className="splash z-30 flex flex-col items-center justify-center gap-6">
 				<h1>{text}</h1>
 				<h2 className="text-3xl">{subText}</h2>
 			</div>

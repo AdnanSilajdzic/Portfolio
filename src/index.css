@@ -28,8 +28,18 @@
 }
 
 body {
+	animation: brighten 3s ease-in-out;
 	background-color: #000f1b;
 	overflow-x: hidden;
+}
+
+@keyframes brighten {
+	from {
+		background-color: black;
+	}
+	to {
+		background-color: #000f1b;
+	}
 }
 
 @keyframes rotate {
@@ -44,7 +54,32 @@ body {
 	}
 }
 
+@keyframes grow-and-appear {
+	from {
+		opacity: 0;
+		scale: 0;
+	}
+	to {
+		opacity: 1;
+		scale: 1;
+	}
+}
+
+@keyframes appear {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
+
 #blob {
 	animation: rotate 5s linear infinite;
+	animation: grow-and-appear 3s ease-in-out;
 	translate: -50% -50%;
+}
+
+.splash {
+	animation: appear 1s linear;
 }
