@@ -75,7 +75,6 @@ body {
 }
 
 #blob {
-	animation: rotate 5s linear infinite;
 	animation: grow-and-appear 3s ease-in-out;
 	translate: -50% -50%;
 }
