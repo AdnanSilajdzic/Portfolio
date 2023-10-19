@@ -30,7 +30,6 @@
 body {
 	animation: brighten 3s ease-in-out;
 	background-color: #000f1b;
-	overflow-x: hidden;
 }
 
 @keyframes brighten {

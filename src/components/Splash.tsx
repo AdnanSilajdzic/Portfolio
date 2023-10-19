@@ -44,10 +44,12 @@ const Splash = () => {
 	}, []);
 
 	return (
-		<div className=" flex h-screen flex-col items-center justify-center text-center font-almamono text-7xl text-white">
+		<div
+			className={`flex h-screen flex-col items-center justify-center text-center font-almamono text-4xl text-white sm:text-7xl`}
+		>
 			<div className="splash z-30 flex flex-col items-center justify-center gap-6">
 				<h1>{text}</h1>
-				<h2 className="text-3xl">{subText}</h2>
+				<h2 className="text-lg sm:text-3xl">{subText}</h2>
 			</div>
 		</div>
 	);
