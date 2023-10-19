@@ -29,7 +29,7 @@
 
 body {
 	animation: brighten 3s ease-in-out;
-	background-color: #000f1b;
+	background-color: #001322;
 }
 
 @keyframes brighten {
@@ -37,7 +37,7 @@ body {
 		background-color: black;
 	}
 	to {
-		background-color: #000f1b;
+		background-color: #001322;
 	}
 }
 
