@@ -20,8 +20,12 @@ const AboutMe = () => {
 					rect.top >= 0 &&
 					(window.innerWidth <= 768 || rect.bottom <= window.innerHeight)
 				) {
+					//add css class to the about me section
+					element.classList.add('rise-and-appear');
 					// Start the typing text animation.
-					TypingTextEffect(trueText, setText);
+					setTimeout(() => {
+						TypingTextEffect(trueText, setText);
+					}, 900);
 
 					// Remove the scroll event listener to avoid continuous animations.
 					window.removeEventListener('scroll', handleScroll);
@@ -39,24 +43,26 @@ const AboutMe = () => {
 	}, []);
 
 	return (
-		<div
-			ref={aboutMeRef}
-			className="ml-6 mr-6 flex flex-wrap justify-center gap-20"
-		>
-			<div className="z-30 mb-7 flex w-1/3 min-w-[250px] flex-col justify-center gap-4 font-almamonoLight text-2xl text-white sm:text-4xl">
-				<h1 className="font-almamono">{text}</h1>
-				<p className="max-w-full text-sm sm:text-lg">
-					I am a software engineer with a passion for creating innovative and
-					creative solutions to complex problems. I love learning new things and
-					I am always looking for new challenges. My main focus is on full-stack
-					web development, but I am also capable of working on AI and machine
-					learning projects.
-				</p>
+		<div className="max-h-screen overflow-y-hidden">
+			<div
+				ref={aboutMeRef}
+				className="ml-6 mr-6 flex flex-wrap justify-center gap-20 opacity-0"
+			>
+				<div className="z-30 mb-7 flex w-1/3 min-w-[250px] flex-col justify-center gap-4 font-almamonoLight text-2xl text-white sm:text-4xl">
+					<h1 className="font-almamono">{text}</h1>
+					<p className="max-w-full text-sm sm:text-lg">
+						I'm a software engineer with a passion for creating innovative and
+						creative solutions to complex problems. I love learning new things
+						and I am always looking for new challenges. My main focus is on
+						full-stack web development, but I am also capable of working on AI
+						and machine learning projects.
+					</p>
+				</div>
+				<img
+					className="z-30 aspect-square w-1/3 min-w-[250px] rounded-xl bg-white object-cover"
+					src={profileImg}
+				></img>
 			</div>
-			<img
-				className="z-30 aspect-square w-1/3 min-w-[250px] rounded-xl bg-white object-cover"
-				src={profileImg}
-			></img>
 		</div>
 	);
 };
