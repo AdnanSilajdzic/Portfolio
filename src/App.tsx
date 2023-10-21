@@ -2,19 +2,29 @@ import { useState, useEffect } from 'react';
 import Splash from './components/Splash';
 import Blob from './components/Blob';
 import Loading from './components/Loading';
-
+import AboutMe from './components/AboutMe';
+import Navigation from './components/Navigation';
 function App() {
-	const [showSplash, setShowSplash] = useState(false);
+	const [isLoading, setIsLoading] = useState(true);
 
 	useEffect(() => {
 		setTimeout(() => {
-			setShowSplash(true);
+			setIsLoading(false);
 		}, 3000);
 	}, []);
 	return (
 		<div>
 			<Blob />
-			{showSplash ? <Splash /> : <Loading />}
+			{isLoading ? (
+				<Loading />
+			) : (
+				<div className=" flex flex-col">
+					<Splash />
+					<Navigation />
+					<AboutMe />
+					<div className="h-[200px]"></div>
+				</div>
+			)}
 		</div>
 	);
 }

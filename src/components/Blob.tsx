@@ -3,8 +3,6 @@ import { useEffect, useState } from 'react';
 type Props = {};
 
 const Blob = () => {
-	const [screenSize, setScreenSize] = useState<number>(window.innerWidth);
-
 	useEffect(() => {
 		const blob = document.querySelector('#blob') as HTMLDivElement;
 		//add rotation animation that also elongates the blob
@@ -46,7 +44,7 @@ const Blob = () => {
 		};
 	}, []);
 	return (
-		<div className="absolute h-screen w-screen overflow-hidden">
+		<div className="fixed h-screen w-screen overflow-hidden">
 			<div
 				id="blob"
 				className="blob absolute left-1/2 top-1/2 z-0 h-[30vmax] w-[33vmax] rounded-full bg-gradient-to-r from-[#E71D36] to-[#2EC4B6]"

@@ -21,5 +21,5 @@ export default function BinaryTextEffect(
 		} else {
 			clearInterval(intervalId); // Stop the interval when all elements are processed
 		}
-	}, 65);
+	}, 40);
 }

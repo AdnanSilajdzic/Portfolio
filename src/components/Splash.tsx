@@ -2,17 +2,16 @@ import { useState, useEffect } from 'react';
 import BinaryTextEffect from '../functions/BinaryTextEffect';
 
 const Splash = () => {
-	const [trueText, setTrueText] = useState('Hi, my name is Adnan');
+	const trueText = 'Hi, my name is Adnan';
 	const [text, setText] = useState('000 00 1011 11 01011');
-	const [trueSubText, setTrueSubText] = useState(
-		'and I am a software engineer'
-	);
+	const trueSubText = 'and I am a software engineer';
+
 	const [subText, setSubText] = useState('111 0 01 0 111010111 01001110');
 
 	useEffect(() => {
 		setTimeout(() => {
 			BinaryTextEffect(trueText, setText);
-			setTimeout(() => BinaryTextEffect(trueSubText, setSubText), 1400);
+			setTimeout(() => BinaryTextEffect(trueSubText, setSubText), 1100);
 		}, 800);
 	}, []);
 
