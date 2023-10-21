@@ -1,7 +1,7 @@
 export default function TypingTextEffect(
 	text: string,
 	setState: React.Dispatch<React.SetStateAction<string>>,
-	duration = 150
+	duration = 100
 ) {
 	let i = -1;
 	const intervalId = setInterval(async () => {

@@ -18,7 +18,7 @@ const AboutMe = () => {
 				// Check if the AboutMe component is in the viewport.
 				if (
 					rect.top >= 0 &&
-					(window.innerWidth <= 768 || rect.bottom <= window.innerHeight)
+					(window.innerWidth <= 768 || rect.bottom <= window.innerHeight + 40)
 				) {
 					//add css class to the about me section
 					element.classList.add('rise-and-appear');
@@ -43,12 +43,12 @@ const AboutMe = () => {
 	}, []);
 
 	return (
-		<div className="max-h-screen overflow-y-hidden">
+		<div className="overflow-y-hidden">
 			<div
 				ref={aboutMeRef}
-				className="ml-6 mr-6 flex flex-wrap justify-center gap-20 opacity-0"
+				className="flex flex-wrap justify-center gap-20 opacity-0"
 			>
-				<div className="z-30 mb-7 flex w-1/3 min-w-[250px] flex-col justify-center gap-4 font-almamonoLight text-2xl text-white sm:text-4xl">
+				<div className="z-30 mb-7 flex w-3/4 min-w-[250px] flex-col justify-center gap-4 font-almamonoLight text-2xl text-white sm:w-1/3 sm:text-4xl">
 					<h1 className="font-almamono">{text}</h1>
 					<p className="max-w-full text-sm sm:text-lg">
 						I'm a software engineer with a passion for creating innovative and
@@ -59,7 +59,7 @@ const AboutMe = () => {
 					</p>
 				</div>
 				<img
-					className="z-30 aspect-square w-1/3 min-w-[250px] rounded-xl bg-white object-cover"
+					className="z-30 aspect-square w-3/4 min-w-[250px] rounded-xl bg-white object-cover sm:w-1/3"
 					src={profileImg}
 				></img>
 			</div>
