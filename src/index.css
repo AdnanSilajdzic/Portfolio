@@ -116,6 +116,6 @@ body {
 }
 
 .rise-and-appear {
-	animation: rise-and-appear 1s ease-in-out;
+	animation: rise-and-appear 1.2s ease-in-out;
 	opacity: 100% !important;
 }

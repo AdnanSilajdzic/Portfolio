@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react';
+
 import Splash from './components/Splash';
 import Blob from './components/Blob';
 import Loading from './components/Loading';
 import AboutMe from './components/AboutMe';
 import Navigation from './components/Navigation';
+import Projects from './components/Projects';
+
 function App() {
 	const [isLoading, setIsLoading] = useState(true);
 
@@ -18,10 +21,11 @@ function App() {
 			{isLoading ? (
 				<Loading />
 			) : (
-				<div className=" flex flex-col">
+				<div className="flex flex-col">
 					<Splash />
 					<Navigation />
 					<AboutMe />
+					<Projects />
 					<div className="h-[200px]"></div>
 				</div>
 			)}

@@ -41,6 +41,7 @@ const Blob = () => {
 		//remove event listener when the component unmounts
 		return () => {
 			removeEventListener('pointermove', () => {});
+			removeEventListener('touchstart', () => {});
 		};
 	}, []);
 	return (
