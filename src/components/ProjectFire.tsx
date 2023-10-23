@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 import GitLogo from '../assets/images/github-mark-white.svg';
-import ResponsiveAntVideo from './ResponsiveAntVideo';
 import laptop from '../assets/images/notebook-computer.png';
 import phone from '../assets/images/smartphone.png';
 import AntVideo from './AntVideo';
