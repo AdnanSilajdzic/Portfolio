@@ -84,6 +84,18 @@ body {
 	}
 }
 
+@keyframes large-video-animation {
+	from {
+		width: 255px;
+		height: 500px;
+		border-radius: 0.5rem;
+		object-fit: contain;
+	}
+	to {
+		width: 100%;
+	}
+}
+
 #blob {
 	animation: grow-and-appear 3s ease-in-out;
 	translate: -50% -50%;
