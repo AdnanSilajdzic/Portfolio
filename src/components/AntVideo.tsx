@@ -24,7 +24,7 @@ const AntVideo = ({ responsive }: Props) => {
 	return (
 		<div
 			className={`h-full w-5/6 rounded-lg bg-white ${
-				responsive === true ? 'md:w-[255px]' : 'md:w-full'
+				responsive === true ? 'md:w-[250px]' : 'md:w-full'
 			}  overflow-hidden transition-all duration-500`}
 		>
 			<video
