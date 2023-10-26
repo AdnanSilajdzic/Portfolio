@@ -26,15 +26,15 @@ const AntVideo = ({ responsive }: Props) => {
 	return (
 		<div
 			id="video-container"
-			className={`flex h-[500px] w-5/6 items-center justify-center rounded-lg bg-white ${
+			className={`flex items-center justify-center rounded-lg bg-white ${
 				responsive === true
-					? 'w-[240px]'
-					: 'h-[300px] max-w-full md:h-[500px] md:w-[900px]'
+					? 'h-[70vw] w-[34vw] md:h-[30vw] md:w-[14vw]'
+					: 'h-[50vw] w-[90vw] md:h-[30vw] md:w-[50vw]'
 			}  overflow-hidden transition-all duration-500`}
 		>
 			<video
 				className={`hidden rounded-lg opacity-0 duration-500 ${
-					responsive ? 'w-[240px]' : ''
+					responsive ? 'w-full' : ''
 				}`}
 				autoPlay
 				loop
