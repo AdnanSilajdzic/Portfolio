@@ -21,7 +21,7 @@ const AboutMe = () => {
 					(window.innerWidth <= 768 || rect.bottom <= window.innerHeight + 40)
 				) {
 					//add css class to the about me section
-					element.classList.add('rise-and-appear');
+					element.classList.add('sm:rise-and-appear');
 					// Start the typing text animation.
 					setTimeout(() => {
 						TypingTextEffect(trueText, setText);
@@ -46,7 +46,7 @@ const AboutMe = () => {
 		<div className="mb-36 overflow-y-hidden">
 			<div
 				ref={aboutMeRef}
-				className="flex flex-wrap justify-center gap-20 opacity-0"
+				className="flex flex-wrap justify-center gap-20 sm:opacity-0"
 			>
 				<div className="z-30 mb-7 flex w-3/4 min-w-[250px] flex-col justify-center gap-4 font-almamonoLight text-2xl text-white sm:w-1/3 sm:text-4xl">
 					<h1 className="font-almamono">{text}</h1>
