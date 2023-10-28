@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 
 import GitLogo from '../assets/images/github-mark-white.svg';
-import codeScreenshot from '../assets/images/carbon (9).png';
+import codeScreenshot from '../assets/images/carbon (10).png';
 const WeatherApi = () => {
 	const projectFireRef = useRef<HTMLDivElement | null>(null); // Specify the type
 	useEffect(() => {

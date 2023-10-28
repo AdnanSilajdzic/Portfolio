@@ -39,7 +39,7 @@ const ProjectFire = () => {
 	}, []);
 	return (
 		<div className="opacity-0" ref={projectFireRef}>
-			<div className="flex flex-wrap justify-center gap-20 sm:mr-0">
+			<div className="flex flex-wrap justify-center gap-20">
 				<div className="z-30 mb-7 flex w-3/4 min-w-[250px] flex-col justify-center gap-4 font-almamonoLight text-2xl text-white sm:text-4xl md:w-1/4">
 					<h1 className="font-almamono">Project Fire</h1>
 					<p className="max-w-full text-justify text-sm sm:text-lg">

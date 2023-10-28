@@ -36,12 +36,12 @@ const ProjectPieAI = () => {
 		};
 	}, []);
 	return (
-		<div className="mb-36 opacity-0" ref={projectFireRef}>
+		<div className="mb-20 opacity-0" ref={projectFireRef}>
 			<div className="flex flex-wrap-reverse justify-center sm:gap-20">
 				<div className="z-30 flex w-10/12 items-center md:w-1/2">
 					<img
 						src={aiPaper}
-						className="z-[29] h-4/6 w-5/6 cursor-pointer rounded-lg object-cover object-top transition-all duration-300 ease-in-out hover:-rotate-6"
+						className="z-[29] h-4/6 w-full cursor-pointer rounded-lg object-cover object-top transition-all duration-300 ease-in-out hover:-rotate-6"
 					></img>
 					<img
 						src={speaker}
