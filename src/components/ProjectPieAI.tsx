@@ -5,7 +5,6 @@ import aiPaper from '../assets/images/ai-paper1.png';
 import GitLogo from '../assets/images/github-mark-white.svg';
 
 const ProjectPieAI = () => {
-	const [isResponsive, setIsResponsive] = useState(false);
 	const projectFireRef = useRef<HTMLDivElement | null>(null); // Specify the type
 	useEffect(() => {
 		const handleScroll = () => {

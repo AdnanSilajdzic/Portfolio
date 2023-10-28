@@ -1,5 +1,6 @@
 import ProjectFire from './ProjectFire';
 import ProjectPieAI from './ProjectPieAI';
+import WeatherApi from './WeatherApi';
 const Projects = () => {
 	return (
 		<div className="z-30 flex flex-col items-center justify-center">
@@ -9,6 +10,7 @@ const Projects = () => {
 			<div className="mt-20 flex flex-col gap-20 overflow-x-hidden">
 				<ProjectFire />
 				<ProjectPieAI />
+				<WeatherApi />
 			</div>
 		</div>
 	);
