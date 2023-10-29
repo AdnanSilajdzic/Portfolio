@@ -1,11 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
-
-import speaker from '../assets/images/speaker.jpg';
-import aiPaper from '../assets/images/ai-paper1.png';
+import P5Sketch from './P5Sketch';
 import GitLogo from '../assets/images/github-mark-white.svg';
-
-const ProjectPieAI = () => {
+import TypingTextEffect from '../functions/TypingTextEffect';
+const DoodleVision = () => {
 	const projectFireRef = useRef<HTMLDivElement | null>(null); // Specify the type
+	const [prediction, setPrediction] = useState('');
+
 	useEffect(() => {
 		const handleScroll = () => {
 			// Ensure that the ref is not null before accessing it.
@@ -38,37 +38,30 @@ const ProjectPieAI = () => {
 	return (
 		<div className="mb-24 opacity-0" ref={projectFireRef}>
 			<div className="flex flex-wrap-reverse justify-center sm:gap-20">
-				<div className="z-30 flex w-10/12 items-center md:w-1/2">
-					<img
-						src={aiPaper}
-						className="z-[29] h-4/6 w-full cursor-pointer rounded-lg object-cover object-top transition-all duration-300 ease-in-out hover:-rotate-6"
-					></img>
-					<img
-						src={speaker}
-						className="z-30 -ml-[200px] mt-44 h-4/6 w-7/12 cursor-pointer rounded-lg object-cover transition-all duration-300 ease-in-out hover:rotate-6"
-					></img>
+				<div className="z-30 flex w-10/12 flex-col items-center justify-center md:w-1/3">
+					<P5Sketch
+						changePrediction={(name: string) =>
+							TypingTextEffect(name, setPrediction)
+						}
+					/>
+					<p className="font-almamonoThin text-xl text-white">
+						AI prediction: {prediction}
+					</p>
 				</div>
-				<div className="z-30 mb-7 flex w-3/4 min-w-[250px] flex-col justify-center gap-4 font-almamonoLight text-2xl text-white sm:text-4xl md:w-1/4">
-					<h1 className="font-almamono">Pneumonia Diagnosing AI</h1>
+				<div className="z-30 mb-7 flex w-3/4 min-w-[250px] flex-col justify-center gap-4 font-almamonoLight text-2xl text-white sm:text-4xl md:w-1/3">
+					<h1 className="font-almamono">Doodle Vision</h1>
 					<p className="max-w-full text-justify text-sm sm:text-lg">
-						I built an artificial neural network that can diagnose pneumonia
-						with above 90% accuracy. I was invited to present this project at an
-						AI event hosted by{' '}
-						<a
-							className="cursor-pointer font-bold underline"
-							href="https://deeplearning.ai"
-						>
-							Deeplearning.ai
-						</a>{' '}
-						called Pie & AI. The research paper for this project is currently
-						under review for publication.
+						I built a convolutional neural network that can recognize doodles
+						and built a web app to demonstrate it. I used the Quick, Draw!
+						dataset from Google to train the model. I used TensorFlow.js to
+						build the model and React.js to build the web app. The example
+						drawings shown are real drawings from the Quick, Draw! dataset.
 					</p>
 					<div className="flex items-center gap-2">
 						<img
 							src={GitLogo}
 							className="h-10 w-10 cursor-pointer transition-all duration-300 ease-in-out hover:scale-125"
 						></img>
-						<p className="mr-10 text-sm">Jupyter notebook</p>
 					</div>
 				</div>
 			</div>
@@ -76,4 +69,4 @@ const ProjectPieAI = () => {
 	);
 };
 
-export default ProjectPieAI;
+export default DoodleVision;

@@ -48,11 +48,11 @@ const Blob = () => {
 		<div className="fixed h-screen w-screen overflow-hidden">
 			<div
 				id="blob"
-				className="blob absolute left-1/2 top-1/2 z-0 h-[30vmax] w-[33vmax] rounded-full bg-gradient-to-r from-[#E71D36] to-[#2EC4B6]"
+				className="blob absolute left-1/2 top-1/2 z-[-2] h-[30vmax] w-[33vmax] rounded-full bg-gradient-to-r from-[#E71D36] to-[#2EC4B6]"
 			></div>
 			<div
 				id="blur"
-				className="fixed z-10 h-full w-full backdrop-blur-[7vmax]"
+				className="fixed z-[-1] h-full w-full backdrop-blur-[7vmax]"
 			></div>
 		</div>
 	);
