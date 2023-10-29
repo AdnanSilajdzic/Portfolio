@@ -19,7 +19,7 @@ const ProjectFire = () => {
 				// Check if the AboutMe component is in the viewport.
 				if (
 					rect.top >= 0 &&
-					(window.innerWidth <= 768 || rect.bottom <= window.innerHeight + 100)
+					(window.innerWidth <= 768 || rect.bottom <= window.innerHeight + 200)
 				) {
 					//add css class to the project section
 					element.classList.add('slide-and-appear-r');
@@ -67,12 +67,16 @@ const ProjectFire = () => {
 						<img
 							onClick={() => setIsResponsive(false)}
 							src={laptop}
-							className="z-30 h-[50px] w-[50px] cursor-pointer invert transition duration-300 md:hover:scale-150"
+							className={`z-30 h-[50px] w-[50px] cursor-pointer invert transition duration-300 md:hover:scale-150 ${
+								isResponsive ? 'animate-pulse' : ''
+							}`}
 						></img>
 						<img
 							onClick={() => setIsResponsive(true)}
 							src={phone}
-							className="z-30 h-[50px] w-[50px] cursor-pointer invert transition duration-300 md:hover:scale-150"
+							className={`z-30 h-[50px] w-[50px] cursor-pointer invert transition duration-300 md:hover:scale-150 ${
+								isResponsive ? '' : 'animate-pulse'
+							}`}
 						></img>
 					</div>
 				</div>

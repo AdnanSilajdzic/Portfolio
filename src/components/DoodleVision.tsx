@@ -51,11 +51,11 @@ const DoodleVision = () => {
 				<div className="z-30 mb-7 flex w-3/4 min-w-[250px] flex-col justify-center gap-4 font-almamonoLight text-2xl text-white sm:text-4xl md:w-1/3">
 					<h1 className="font-almamono">Doodle Vision</h1>
 					<p className="max-w-full text-justify text-sm sm:text-lg">
-						I built a convolutional neural network that can recognize doodles
-						and built a web app to demonstrate it. I used the Quick, Draw!
-						dataset from Google to train the model. I used TensorFlow.js to
-						build the model and React.js to build the web app. The example
-						drawings shown are real drawings from the Quick, Draw! dataset.
+						I built a convolutional neural network that can recognize 150
+						different types of drawings and built a web app to demonstrate it. I
+						used the Quick, Draw! dataset from Google to train the model. I used
+						TensorFlow.js to build the model and React.js to build the web app.
+						The example drawings shown are real drawings from the dataset.
 					</p>
 					<div className="flex items-center gap-2">
 						<img

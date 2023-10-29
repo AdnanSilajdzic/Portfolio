@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 
-type Props = {};
-
 const Blob = () => {
 	useEffect(() => {
 		const blob = document.querySelector('#blob') as HTMLDivElement;
@@ -23,7 +21,7 @@ const Blob = () => {
 					left: `${e.clientX}px`,
 					top: `${e.clientY}px`,
 				},
-				{ duration: 20000, fill: 'forwards' }
+				{ duration: 15000, fill: 'forwards' }
 			);
 		});
 
@@ -48,11 +46,11 @@ const Blob = () => {
 		<div className="fixed h-screen w-screen overflow-hidden">
 			<div
 				id="blob"
-				className="blob absolute left-1/2 top-1/2 z-[-2] h-[30vmax] w-[33vmax] rounded-full bg-gradient-to-r from-[#E71D36] to-[#2EC4B6]"
+				className="blob absolute left-1/2 top-1/2 z-[-2] h-[28vmax] w-[28vmax] rounded-full bg-gradient-to-r from-[#E71D36] to-[#2EC4B6]"
 			></div>
 			<div
 				id="blur"
-				className="fixed z-[-1] h-full w-full backdrop-blur-[7vmax]"
+				className="fixed z-[-1] h-full w-full backdrop-blur-[6vmax]"
 			></div>
 		</div>
 	);
