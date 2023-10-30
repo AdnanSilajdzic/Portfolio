@@ -3,7 +3,6 @@ import { useEffect } from 'react';
 import GitLogo from '../assets/images/github-mark-white.svg';
 import Linkedin from '../assets/images/linkedin.svg';
 import mail from '../assets/images/mail.svg';
-import Spline from '@splinetool/react-spline';
 
 const MagicText = () => {
 	let index = 0,
@@ -56,16 +55,31 @@ const MagicText = () => {
 				<img
 					src={GitLogo}
 					alt="Github logo"
+					onClick={() => {
+						window.open('https://github.com/AdnanSilajdzic');
+					}}
 					className="h-10 w-10 cursor-pointer transition-all duration-300 ease-in-out hover:scale-125"
 				/>
 				<img
 					src={Linkedin}
 					alt="Linkedin logo"
+					onClick={() => {
+						window.open(
+							'https://www.linkedin.com/in/adnan-silajd%C5%BEi%C4%87-027468248/'
+						);
+					}}
 					className="h-10 w-10 cursor-pointer invert transition-all duration-300 ease-in-out hover:scale-125"
 				/>
 				<img
 					src={mail}
 					alt="Email logo"
+					onClick={() => {
+						//copy email to clipboard
+						navigator.clipboard.writeText('adnan.silajdzic.it@gmail.com');
+						//show notification that email was copied
+						alert('Email copied to clipboard');
+						window.open('mailto:adnan.silajdzic.it@gmail.com');
+					}}
 					className="-mb-[6px] h-10 w-10 cursor-pointer invert transition-all duration-300 ease-in-out hover:scale-125"
 				/>
 			</div>

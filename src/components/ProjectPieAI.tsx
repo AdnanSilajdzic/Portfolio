@@ -51,9 +51,9 @@ const ProjectPieAI = () => {
 				<div className="z-30 mb-7 flex w-3/4 min-w-[250px] flex-col justify-center gap-4 font-almamonoLight text-2xl text-white sm:text-4xl md:w-1/4">
 					<h1 className="font-almamono">Pneumonia Diagnosing AI</h1>
 					<p className="max-w-full text-justify text-sm sm:text-lg">
-						I built an artificial neural network that can diagnose pneumonia
-						with above 90% accuracy. I was invited to present this project at an
-						AI event hosted by{' '}
+						Me and my colleague built an artificial neural network that can
+						diagnose pneumonia with above 90% accuracy. I was invited to present
+						this project at an AI event hosted by{' '}
 						<a
 							className="cursor-pointer font-bold underline"
 							href="https://deeplearning.ai"
@@ -63,11 +63,13 @@ const ProjectPieAI = () => {
 						called Pie & AI. The research paper for this project is currently
 						under review for publication.
 					</p>
-					<div className="flex items-center gap-2">
-						<img
-							src={GitLogo}
-							className="h-10 w-10 cursor-pointer transition-all duration-300 ease-in-out hover:scale-125"
-						></img>
+					<div
+						onClick={() => {
+							window.open('https://github.com/EdinZiga/PneumoniaImagesANN');
+						}}
+						className="flex cursor-pointer items-center gap-3 transition-all duration-300 ease-in-out hover:scale-105"
+					>
+						<img src={GitLogo} className="h-10 w-10 cursor-pointer"></img>
 						<p className="mr-10 text-sm">Jupyter notebook</p>
 					</div>
 				</div>

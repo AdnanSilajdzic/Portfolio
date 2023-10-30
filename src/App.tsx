@@ -34,7 +34,12 @@ function App() {
 					<div className="flex w-full justify-center text-center">
 						<p className="z-30 mb-2 cursor-pointer place-self-center self-center font-almamonoLight text-sm text-white">
 							Want to see how I made this page? It's on{' '}
-							<a className="font-bold underline">GitHub</a>
+							<a
+								href="https://github.com/AdnanSilajdzic/Portfolio"
+								className="font-bold underline"
+							>
+								GitHub
+							</a>
 						</p>
 					</div>
 				</div>

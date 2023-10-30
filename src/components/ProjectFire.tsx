@@ -49,16 +49,28 @@ const ProjectFire = () => {
 						Ant Colony internship.
 					</p>
 					<div className="flex items-center gap-2">
-						<img
-							src={GitLogo}
-							className="h-10 w-10 cursor-pointer transition-all duration-300 ease-in-out hover:scale-125"
-						></img>
-						<p className="mr-10 text-sm">front end</p>
-						<img
-							src={GitLogo}
-							className="h-10 w-10 cursor-pointer transition-all duration-300 ease-in-out hover:scale-125"
-						></img>
-						<p className="text-sm">back end</p>
+						<div
+							onClick={() => {
+								window.open(
+									'https://github.com/AdnanSilajdzic/Ant-Colony-Internship-Frontend'
+								);
+							}}
+							className="flex cursor-pointer items-center gap-3 transition-all duration-300 ease-in-out hover:scale-110"
+						>
+							<img src={GitLogo} className="h-10 w-10"></img>
+							<p className="mr-10 text-sm">front end</p>
+						</div>
+						<div
+							onClick={() => {
+								window.open(
+									'https://github.com/AdnanSilajdzic/Ant-Colony-Internship-Backend'
+								);
+							}}
+							className="flex cursor-pointer items-center gap-3 transition-all duration-300 ease-in-out hover:scale-110"
+						>
+							<img src={GitLogo} className="h-10 w-10 cursor-pointer"></img>
+							<p className="text-sm">back end</p>
+						</div>
 					</div>
 				</div>
 				<div className="z-30 flex w-full flex-col items-center justify-center md:h-auto md:w-1/2">

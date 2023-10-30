@@ -45,11 +45,13 @@ const WeatherApi = () => {
 						authentication, request logging, swagger and postman documentation
 						and <a className="cursor-pointer font-bold underline">more</a>
 					</p>
-					<div className="flex items-center gap-2">
-						<img
-							src={GitLogo}
-							className="h-10 w-10 cursor-pointer transition-all duration-300 ease-in-out hover:scale-125"
-						></img>
+					<div
+						onClick={() => {
+							window.open('https://github.com/AdnanSilajdzic/API-Project');
+						}}
+						className="flex cursor-pointer items-center gap-3 transition-all duration-300 ease-in-out hover:scale-105"
+					>
+						<img src={GitLogo} className="h-10 w-10 cursor-pointer"></img>
 						<p className="mr-10 text-sm">Repository</p>
 					</div>
 				</div>
