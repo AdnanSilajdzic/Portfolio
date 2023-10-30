@@ -30,8 +30,8 @@ const MagicText = () => {
 		}
 	}, []);
 	return (
-		<div className="z-30 flex w-1/3 flex-col items-center justify-center gap-7 font-almamono text-6xl text-white">
-			<h1>
+		<div className="z-30 mt-6 flex w-full flex-col items-center justify-center font-almamono text-2xl text-white md:w-1/3 lg:text-7xl">
+			<h1 className="text-center">
 				Let's make something
 				<span className="magic">
 					<span className="magic-star">
@@ -49,11 +49,10 @@ const MagicText = () => {
 							<path d="M512 255.1c0 11.34-7.406 20.86-18.44 23.64l-171.3 42.78l-42.78 171.1C276.7 504.6 267.2 512 255.9 512s-20.84-7.406-23.62-18.44l-42.66-171.2L18.47 279.6C7.406 276.8 0 267.3 0 255.1c0-11.34 7.406-20.83 18.44-23.61l171.2-42.78l42.78-171.1C235.2 7.406 244.7 0 256 0s20.84 7.406 23.62 18.44l42.78 171.2l171.2 42.78C504.6 235.2 512 244.6 512 255.1z" />
 						</svg>
 					</span>
-					<span className="magic-text -ml-5">magical</span>
+					<span className="magic-text">magical</span>
 				</span>
-				together!
 			</h1>
-			<div className="mb-10 mt-10 flex h-full w-full items-center justify-start gap-10">
+			<div className="mb-10 mt-10 flex h-full w-full items-end justify-center gap-10 md:justify-start">
 				<img
 					src={GitLogo}
 					alt="Github logo"
@@ -67,7 +66,7 @@ const MagicText = () => {
 				<img
 					src={mail}
 					alt="Email logo"
-					className="h-10 w-10 cursor-pointer invert transition-all duration-300 ease-in-out hover:scale-125"
+					className="-mb-[6px] h-10 w-10 cursor-pointer invert transition-all duration-300 ease-in-out hover:scale-125"
 				/>
 			</div>
 		</div>

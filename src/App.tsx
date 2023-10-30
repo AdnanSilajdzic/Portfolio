@@ -31,10 +31,12 @@ function App() {
 					<div className="mb-44 mt-36 flex justify-end">
 						<ContactMe />
 					</div>
-					<p className="font-sm z-30 mb-2 cursor-pointer place-self-center self-center font-almamonoLight text-white">
-						Want to see how I made this page? It's on{' '}
-						<a className="font-bold underline">GitHub</a>
-					</p>
+					<div className="flex w-full justify-center text-center">
+						<p className="z-30 mb-2 cursor-pointer place-self-center self-center font-almamonoLight text-sm text-white">
+							Want to see how I made this page? It's on{' '}
+							<a className="font-bold underline">GitHub</a>
+						</p>
+					</div>
 				</div>
 			)}
 		</div>

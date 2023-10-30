@@ -24,10 +24,10 @@ const ContactMe = () => {
 		return () => clearInterval(interval);
 	}, []);
 	return (
-		<div className="z-30 flex w-full flex-col items-center justify-center gap-7 font-almamonoLight text-5xl text-white">
+		<div className="z-30 flex w-full flex-col flex-wrap-reverse items-center justify-center gap-7 font-almamonoLight text-5xl text-white">
 			<h1 className="mb-20">Contact me</h1>
-			<div className="flex flex-wrap justify-center gap-14">
-				<div className="flex w-1/2 flex-col gap-5">
+			<div className="flex flex-wrap-reverse justify-center gap-14">
+				<div className="flex w-10/12 flex-col gap-5 md:w-1/2">
 					<label
 						htmlFor="email"
 						className="-mb-5 font-almamono text-2xl text-white"
@@ -39,7 +39,7 @@ const ContactMe = () => {
 						id="email"
 						name="email"
 						placeholder="example@email.com"
-						className="w-full rounded-xl bg-[rgba(29,33,43,0.68)] p-3 font-almamono text-xl text-white"
+						className="w-full rounded-xl bg-[rgba(29,33,43,0.68)] p-3 font-almamono text-sm text-white sm:text-xl"
 					/>
 					<label
 						htmlFor="message"
@@ -50,7 +50,7 @@ const ContactMe = () => {
 					<textarea
 						name="message"
 						id="message"
-						className="max-h-60 w-full rounded-xl bg-[rgba(29,33,43,0.68)] p-3 font-almamono text-xl text-white"
+						className="max-h-60 w-full rounded-xl bg-[rgba(29,33,43,0.68)] p-3 font-almamono text-sm text-white sm:text-xl"
 						placeholder={placeholderText}
 						rows={10}
 					></textarea>

@@ -203,9 +203,6 @@ body {
 
 h1 > .magic {
 	font-family: 'Alma Mono', monospace;
-	margin: 0px;
-	padding: 20px;
-	text-align: center;
 	display: inline-block;
 	position: relative;
 }
