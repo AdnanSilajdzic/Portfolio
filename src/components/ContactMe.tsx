@@ -4,12 +4,12 @@ import TypingTextEffect from '../functions/TypingTextEffect';
 import emailjs from '@emailjs/browser';
 
 const ContactMe = () => {
-	const [placeholderText, setPlaceholderText] = useState(
-		'How did you make this glowing blob?!' as string
-	);
+	const [placeholderText, setPlaceholderText] = useState('' as string);
 	const [email, setEmail] = useState('' as string);
 	const [message, setMessage] = useState('' as string);
-	const [isSending, setIsSending] = useState(false as boolean);
+	const [isEmailValid, setIsEmailValid] = useState(false as boolean);
+	const [isError, setIsError] = useState(false as boolean);
+	const [sendingMessage, setSendingMessage] = useState('Send' as string);
 	const placeholderTexts = [
 		'How did you make this glowing blob follow my mouse?!',
 		'What shampoo do you use?',
@@ -19,21 +19,37 @@ const ContactMe = () => {
 	];
 
 	function sendEmail() {
+		//check if email and message are empty
+		if (email === '' || message === '') {
+			setIsError(true);
+			alert('Please fill in all fields');
+			return;
+		}
+		//check if email is valid
+		if (!email.includes('@') || !email.includes('.')) {
+			setIsError(true);
+			alert('Please enter a valid email');
+			return;
+		}
 		var templateParams = {
 			email: email,
 			message: message,
 		};
+		setSendingMessage('Sending...');
 		//import service id from env file
 		const serviceId = import.meta.env.VITE_SERVICE_ID;
 		const templateId = import.meta.env.VITE_TEMPLATE_ID;
 		const publicKey = import.meta.env.VITE_PUBLIC_KEY;
 		emailjs.send(serviceId, templateId, templateParams, publicKey).then(
 			function (response) {
+				setSendingMessage('Sent!');
+				setIsError(false);
 				setMessage('');
 				setEmail('');
 				console.log('SUCCESS!', response.status, response.text);
 			},
 			function (error) {
+				setSendingMessage('Failed to send :/');
 				console.log('FAILED...', error);
 			}
 		);
@@ -65,9 +81,17 @@ const ContactMe = () => {
 						id="email"
 						name="email"
 						placeholder="example@email.com"
-						className="w-full rounded-xl bg-[rgba(29,33,43,0.68)] p-3 font-almamono text-sm text-white sm:text-xl"
+						className={`w-full rounded-xl bg-[rgba(29,33,43,0.68)] p-3 font-almamono text-sm text-white sm:text-xl ${
+							isError && !isEmailValid ? 'border-2 border-red-500' : ''
+						}`}
 						value={email}
-						onChange={(e) => setEmail(e.target.value)}
+						onChange={(e) => {
+							setEmail(e.target.value);
+							setSendingMessage('Send');
+							if (e.target.value.includes('@') && e.target.value.includes('.'))
+								setIsEmailValid(true);
+							else setIsEmailValid(false);
+						}}
 					/>
 					<label
 						htmlFor="message"
@@ -78,19 +102,26 @@ const ContactMe = () => {
 					<textarea
 						name="message"
 						id="message"
-						className="max-h-60 w-full rounded-xl bg-[rgba(29,33,43,0.68)] p-3 font-almamono text-sm text-white sm:text-xl"
+						className={`max-h-60 w-full rounded-xl bg-[rgba(29,33,43,0.68)] p-3 font-almamono text-sm text-white sm:text-xl ${
+							isError && message === '' ? 'border-2 border-red-500' : ''
+						}`}
 						placeholder={placeholderText}
 						rows={10}
 						value={message}
-						onChange={(e) => setMessage(e.target.value)}
+						onChange={(e) => {
+							setSendingMessage('Send');
+							setMessage(e.target.value);
+						}}
 					></textarea>
 
 					<button
 						type="submit"
 						onClick={sendEmail}
-						className="w-40 self-center bg-transparent font-almamono text-2xl text-white transition-all duration-150 hover:scale-110"
+						className={`w-40 self-center bg-transparent font-almamono text-2xl text-white transition-all duration-150 ${
+							sendingMessage === 'Send' ? 'hover:scale-110' : 'cursor-default'
+						}`}
 					>
-						Send
+						{sendingMessage}
 					</button>
 				</div>
 				<MagicText />
