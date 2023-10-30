@@ -10,8 +10,7 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"@splinetool/react-spline": "^2.2.6",
-		"@splinetool/runtime": "^0.9.490",
+		"@emailjs/browser": "^3.11.0",
 		"p5": "^1.8.0",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0",

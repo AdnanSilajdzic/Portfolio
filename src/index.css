@@ -154,6 +154,12 @@ body {
 	opacity: 100% !important;
 }
 
+@media screen and (max-width: 768px) {
+	.rise-and-appear {
+		animation: none !important;
+	}
+}
+
 .slide-and-appear-r {
 	animation: slide-and-appear-r 1s ease-in-out;
 	opacity: 100% !important;

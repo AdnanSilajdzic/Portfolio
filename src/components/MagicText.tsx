@@ -30,9 +30,9 @@ const MagicText = () => {
 		}
 	}, []);
 	return (
-		<div className="z-30 mt-6 flex w-full flex-col items-center justify-center font-almamono text-2xl text-white md:w-1/3 lg:text-7xl">
+		<div className="z-30 mt-6 flex w-full flex-col items-center justify-center font-almamono text-4xl text-white md:w-1/3 md:text-6xl">
 			<h1 className="text-center">
-				Let's make something
+				Let's make something{' '}
 				<span className="magic">
 					<span className="magic-star">
 						<svg viewBox="0 0 512 512">
@@ -52,7 +52,7 @@ const MagicText = () => {
 					<span className="magic-text">magical</span>
 				</span>
 			</h1>
-			<div className="mb-10 mt-10 flex h-full w-full items-end justify-center gap-10 md:justify-start">
+			<div className="mb-10 mt-10 flex h-full w-full items-end justify-center gap-10">
 				<img
 					src={GitLogo}
 					alt="Github logo"
