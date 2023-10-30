@@ -34,7 +34,7 @@ const WeatherApi = () => {
 		};
 	}, []);
 	return (
-		<div className="mb-36 opacity-0" ref={projectFireRef}>
+		<div className="mb-24 opacity-0" ref={projectFireRef}>
 			<div className="flex flex-wrap justify-center sm:gap-20">
 				<div className="z-30 mb-7 flex w-3/4 min-w-[250px] flex-col justify-center gap-4 font-almamonoLight text-2xl text-white sm:text-4xl md:w-1/4">
 					<h1 className="font-almamono">Weather API</h1>

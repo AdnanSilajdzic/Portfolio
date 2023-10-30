@@ -36,19 +36,19 @@ const DoodleVision = () => {
 		};
 	}, []);
 	return (
-		<div className="mb-24 opacity-0" ref={projectFireRef}>
-			<div className="flex flex-wrap-reverse justify-center sm:gap-20">
+		<div className="mb-36 opacity-0 sm:mt-12" ref={projectFireRef}>
+			<div className="flex flex-wrap-reverse justify-center gap-20">
 				<div className="z-30 flex w-10/12 flex-col items-center justify-center md:w-1/3">
 					<P5Sketch
 						changePrediction={(name: string) =>
 							TypingTextEffect(name, setPrediction)
 						}
 					/>
-					<p className="font-almamonoThin text-xl text-white">
+					<p className="font-almamonoThin text-sm text-white sm:text-xl">
 						AI prediction: {prediction}
 					</p>
 				</div>
-				<div className="z-30 mb-7 flex w-3/4 min-w-[250px] flex-col justify-center gap-4 font-almamonoLight text-2xl text-white sm:text-4xl md:w-1/3">
+				<div className="z-30 mb-7 flex w-3/4 min-w-[250px] flex-col justify-center gap-4 font-almamonoLight text-2xl text-white sm:text-4xl md:w-1/4">
 					<h1 className="font-almamono">Doodle Vision</h1>
 					<p className="max-w-full text-justify text-sm sm:text-lg">
 						I built a convolutional neural network that can recognize 150

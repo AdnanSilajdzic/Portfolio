@@ -43,7 +43,7 @@ const AboutMe = () => {
 	}, []);
 
 	return (
-		<div className="mb-36 overflow-y-hidden">
+		<div className="z-30 mb-36 overflow-y-hidden">
 			<div
 				ref={aboutMeRef}
 				className="flex flex-wrap justify-center gap-20 opacity-0"

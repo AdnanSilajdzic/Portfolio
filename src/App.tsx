@@ -6,6 +6,8 @@ import Loading from './components/Loading';
 import AboutMe from './components/AboutMe';
 import Navigation from './components/Navigation';
 import Projects from './components/Projects';
+import MagicText from './components/MagicText';
+import ContactMe from './components/ContactMe';
 
 function App() {
 	const [isLoading, setIsLoading] = useState(true);
@@ -26,7 +28,13 @@ function App() {
 					<Navigation />
 					<AboutMe />
 					<Projects />
-					<div className="h-[200px]"></div>
+					<div className="mb-44 mt-36 flex justify-end">
+						<ContactMe />
+					</div>
+					<p className="font-sm z-30 mb-2 cursor-pointer place-self-center self-center font-almamonoLight text-white">
+						Want to see how I made this page? It's on{' '}
+						<a className="font-bold underline">GitHub</a>
+					</p>
 				</div>
 			)}
 		</div>

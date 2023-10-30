@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 const Blob = () => {
 	useEffect(() => {
@@ -15,26 +15,28 @@ const Blob = () => {
 				iterations: Infinity,
 			}
 		);
-		addEventListener('pointermove', (e) => {
-			blob.animate(
-				{
-					left: `${e.clientX}px`,
-					top: `${e.clientY}px`,
-				},
-				{ duration: 15000, fill: 'forwards' }
-			);
-		});
+		setTimeout(() => {
+			addEventListener('pointermove', (e) => {
+				blob.animate(
+					{
+						left: `${e.clientX}px`,
+						top: `${e.clientY}px`,
+					},
+					{ duration: 15000, fill: 'forwards' }
+				);
+			});
 
-		// event listener for tap on mobile
-		addEventListener('touchstart', (e) => {
-			blob.animate(
-				{
-					left: `${e.touches[0].clientX}px`,
-					top: `${e.touches[0].clientY}px`,
-				},
-				{ duration: 5000, fill: 'forwards' }
-			);
-		});
+			// event listener for tap on mobile
+			addEventListener('touchstart', (e) => {
+				blob.animate(
+					{
+						left: `${e.touches[0].clientX}px`,
+						top: `${e.touches[0].clientY}px`,
+					},
+					{ duration: 5000, fill: 'forwards' }
+				);
+			});
+		}, 3000);
 
 		//remove event listener when the component unmounts
 		return () => {
