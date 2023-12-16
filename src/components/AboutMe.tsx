@@ -46,11 +46,11 @@ const AboutMe = () => {
 		<div className="z-30 mb-36 overflow-y-hidden">
 			<div
 				ref={aboutMeRef}
-				className="flex flex-wrap justify-center gap-20 opacity-0"
+				className="flex flex-wrap-reverse justify-center gap-20 opacity-0"
 			>
 				<div className="z-30 mb-7 flex w-3/4 min-w-[250px] flex-col justify-center gap-4 font-almamonoLight text-2xl text-white sm:w-1/3 sm:text-4xl">
 					<h1 className="font-almamono">{text}</h1>
-					<p className="max-w-full text-sm sm:text-lg">
+					<p className="max-w-full text-justify text-sm sm:text-lg">
 						I'm a software engineer with a passion for creating innovative and
 						creative solutions to complex problems. I love learning new things
 						and I am always looking for new challenges. My main focus is on
