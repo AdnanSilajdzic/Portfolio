@@ -10,12 +10,37 @@ import ContactMe from "./components/ContactMe";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-
+  const [currentSection, setCurrentSection] = useState("splash");
+  const [splashHeight, setSplashHeight] = useState(0);
+  const [aboutMeHeight, setAboutMeHeight] = useState(0);
+  const [projectsHeight, setProjectsHeight] = useState(0);
+  const [contactMeHeight, setContactMeHeight] = useState(0);
+  const [clientScroll, setClientScroll] = useState(window.scrollY);
   useEffect(() => {
+    //add scroll event listener
+    window.addEventListener("scroll", () => {
+      setClientScroll(window.scrollY);
+      //get the current section
+      if (window.scrollY < splashHeight - 250) {
+        setCurrentSection("splash");
+      } else if (window.scrollY < splashHeight + aboutMeHeight - 250) {
+        setCurrentSection("aboutMe");
+      } else if (window.scrollY < splashHeight + aboutMeHeight + projectsHeight - 250) {
+        setCurrentSection("projects");
+      } else if (window.scrollY < splashHeight + aboutMeHeight + projectsHeight + contactMeHeight - 250) {
+        setCurrentSection("contactMe");
+      }
+    });
+
+    console.log(splashHeight, clientScroll, currentSection);
     setTimeout(() => {
       setIsLoading(false);
     }, 3000);
-  }, []);
+    //remove scroll event listener
+    return () => {
+      window.removeEventListener("scroll", () => {});
+    };
+  }, [clientScroll]);
   return (
     <div>
       <Blob />
@@ -23,12 +48,12 @@ function App() {
         <Loading />
       ) : (
         <div className="flex flex-col">
-          <Splash />
-          <Navigation />
-          <AboutMe />
-          <Projects />
+          <Splash setSplashHeight={setSplashHeight} />
+          <Navigation currentSection={currentSection} />
+          <AboutMe setAboutMeHeight={setAboutMeHeight} />
+          <Projects setProjectsHeight={setProjectsHeight} />
           <div className="mb-44 mt-36 flex justify-end">
-            <ContactMe />
+            <ContactMe setContactMeHeight={setContactMeHeight} />
           </div>
           <div className="flex w-full justify-center text-center">
             <p className="z-30 mb-2 cursor-pointer place-self-center self-center font-almamonoLight text-sm text-white">

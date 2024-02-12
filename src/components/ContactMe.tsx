@@ -1,9 +1,10 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import MagicText from "./MagicText";
 import TypingTextEffect from "../functions/TypingTextEffect";
 import emailjs from "@emailjs/browser";
 
-const ContactMe = () => {
+const ContactMe = ({ setContactMeHeight }: any) => {
+  const ref = useRef<HTMLDivElement | null>(null);
   const [placeholderText, setPlaceholderText] = useState("" as string);
   const [email, setEmail] = useState("" as string);
   const [message, setMessage] = useState("" as string);
@@ -57,6 +58,9 @@ const ContactMe = () => {
   }
 
   useEffect(() => {
+    if (ref.current) {
+      setContactMeHeight(ref.current.clientHeight);
+    }
     let index = 0;
     const interval = setInterval(() => {
       if (index === placeholderTexts.length - 1) index = 0;
@@ -67,7 +71,11 @@ const ContactMe = () => {
     return () => clearInterval(interval);
   }, []);
   return (
-    <div className="z-30 flex w-full flex-col flex-wrap items-center justify-center gap-7 font-almamonoLight text-5xl text-white">
+    <div
+      className="z-30 flex w-full flex-col flex-wrap items-center justify-center gap-7 font-almamonoLight text-5xl text-white"
+      ref={ref}
+      id="contactMe"
+    >
       <h1 className="mb-20">Contact me</h1>
       <div className="flex flex-wrap justify-center gap-14">
         <div className="flex w-10/12 flex-col gap-5 md:w-1/2">
