@@ -32,7 +32,6 @@ function App() {
       }
     });
 
-    console.log(splashHeight, clientScroll, currentSection);
     setTimeout(() => {
       setIsLoading(false);
     }, 3000);
