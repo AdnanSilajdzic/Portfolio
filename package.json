@@ -2,7 +2,7 @@
   "name": "portfolio-page",
   "private": true,
   "version": "0.0.0",
-  "homepage": "adnansilajdzic.github.io/Portfolio/",
+  "homepage": "adnansilajdzic.github.io/Portfolio",
   "type": "module",
   "scripts": {
     "dev": "vite --host",
